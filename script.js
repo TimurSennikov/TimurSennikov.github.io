@@ -6,12 +6,11 @@ window.onload = () => {
             if(err){} // watafak?
             else{document.getElementById("score").innerHTML = data;}
         });
-        tg.CloudStorage.setItem("skrypakmb_bal", 0);
-    }, 1000)
+    }, 100);
 
     document.getElementById("clickArea").onclick = () => {
         tg.CloudStorage.getItem("skrypakmb_bal", (err, data) => {
-            tg.CloudStorage.setItem("skrypakmb_bal", parseInt(data, 10) + 1);
+            if(!err){tg.CloudStorage.setItem("skrypakmb_bal", parseInt(data, 10) + 1);}
         });
     };
 };
