@@ -6,7 +6,8 @@ window.onload = () => {
             if(err){} // watafak?
             else{document.getElementById("score").innerHTML = data;}
         });
-    }, 1000);
+        tg.CloudStorage.setItem("skrypakmb_bal", 0);
+    }, 1000)
 
     document.getElementById("clickArea").onclick = () => {
         tg.CloudStorage.getItem("skrypakmb_bal", (err, data) => {
